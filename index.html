@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<title>NCWorks Training Center</title>
+
+
+	<!-- Stylesheets -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="css/TRAIN.css" rel="stylesheet">
+
+	<!-- Jquery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<!--Kendo UI-->
+	<link href="telerik/styles/kendo.common.min.css" rel="stylesheet" />
+	<link href="telerik/styles/kendo.default.min.css" rel="stylesheet" />
+	<link href="telerik/styles/kendo.default.mobile.min.css" rel="stylesheet" />
+	<script src="telerik/js/kendo.all.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+	<style>
+		#indexPageWrapper {
+			display: flex;
+			justify-content: space-between;
+			padding: 10px;
+			align-content: stretch;
+		}
+
+
+
+        #leftColumn {
+            width: 450px;
+			padding: 10px 20px 10px 20px;
+        }
+
+		.loginCard {
+			box-shadow: 2px 3px 9px 0px gray;
+			background: #005763;
+		}
+            .loginCard h5, .loginCard h4, .loginCard h6 {
+                color: white;
+            }
+
+
+        #rightColumn {
+            flex-grow: 2;
+            padding: 10px 20px 10px 20px;
+        }
+ 
+
+  
+        #announcementsHeader {
+            color: white;
+            padding: 10px 20px 5px 20px;
+        }
+        .announcement {
+            margin-top: 10px;
+            padding: 15px 20px 5px 20px;
+            border-top: solid 5px #005763;
+			background: white;
+        }
+            .announcement p, .announcement li {
+                font-size: .75rem;
+            }
+	</style>
+
+	<!-- Load Sections -->
+
+	<script>
+		$(function () {
+			$("#header").load("views/shared/tempHeader.html");
+			$("#announcements").load("views/shared/announcements.html");
+			$("#footer").load("views/shared/footer.html");
+		});
+	</script>
+
+	<!-- Header  -->
+
+	<div id="header"></div>
+	<div style="background: #eeeeee;">
+		<div style="background-color: #08bed5; box-shadow: 1px 1px 4px 0px gray; " class="text-center  p-2">
+			<h1 style="font-size: 3.5rem;  color: white;  letter-spacing: 4px; margin-bottom: 20px; text-shadow:  #005763 0px 3px 10px; "><strong>Welcome To TRAIN</strong></h1>
+			<hr id="welcomeUnderline" />
+			<h3 style="color: #005763; margin-top: 15px;"><strong>T</strong>raining <strong>R</strong>egistration and <strong>I</strong>nformation <strong>N</strong>etwork</h3>
+		</div>
+		<div id="indexPageWrapper">
+
+
+			<div id="leftColumn">
+
+				<div class="card loginCard">
+					<div class="card-body">
+						<div class="text-center mb-3">
+							<h4 class="mb-0">Please Sign In</h4>
+							<h6 style="font-weight: lighter">(Only one login is required)</h6>
+						</div>
+						<form>
+							<h6>All Users - Log in using your email</h6>
+
+							<div class="form-floating">
+								<input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com" required autofocus>
+								<label for="floatingInput">Email address</label>
+							</div>
+							<div class="form-floating">
+								<input type="password" class="form-control form-control-sm" id="floatingPassword" placeholder="Password" required>
+								<label for="floatingPassword">Password</label>
+							</div>
+							<div class="d-grid gap-2">
+
+								<button class="btn btn-primary btn-block" type="submit"><strong>Sign in</strong></button>
+							</div>
+
+						</form>
+						<div class="d-flex mt-2 text-white justify-content-between mb-3">
+							<div>
+								<p class="mb-0" style="font-size: 12px;">Forgot Password?</p>
+								<a class="btn btn-secondary btn-sm" href="http://10.18.169.61/newTrain/views/account/resetPassword.html" role="button">Reset My Password</a>
+							</div>
+							<div>
+								<p class="mb-0" style="font-size: 12px; text-align: right;">New to TRAIN?</p>
+								<a class="btn btn-success btn-sm " href="http://10.18.169.61/newTrain/views/account/newAccount.html" role="button">Create an account</a>
+							</div>
+						</div>
+						<h6 class="pt-2 text-center" style=" color: white; ">Need help?  Email us at: <a class="text-white" href="mailto:ncwtc@nccommerce.com"><u>ncwtc@nccommerce.com</u></a></h6>
+						<hr style="background: #ebebeb!important;" />
+						<h6 style=" color: white;">Optional Login for NCID Users</h6>
+						<div class="d-grid gap-2">
+							<button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#ncidLogin"><strong>Sign in with NCID</strong></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="rightColumn">
+				<div id="announcmentsSection">
+					<!-- What's Happening/Announcements -->
+					<h3 style="color: #005763;  margin-bottom: 20px;">What's Happening</h3>
+					<div id="announcementsList">
+						<div id="announcement1" class="announcement">
+							<h5>NEW On Demand Trainings</h5>
+							<h6>Don't miss these NEW On Demand Trainings!</h6>
+							<p>
+								These sessions are available 24/7. Register and participate any time!
+							</p>
+							<ul>
+								<li><a href="#">Compassion Fatigue - The Cost of Caring</a></li>
+								<li><a href="#">Developing a Career Plan</a></li>
+							</ul>
+							<p>
+								To register, log in and click on the <strong>On Demand Training</strong> box
+							</p>
+						</div>
+
+						<div id="announcement2" class="announcement">
+							<h5>Active Live Sessions</h5>
+
+							<h6>Register Today</h6>
+							<p>Sponsored by: Regional Partnership WDB</p>
+							<ul>
+								<li>May 13 - Raising Our Game Programming</li>
+								<li>May 20 - Keeping Them Connected</li>
+								<li>May 27 - Innovation and Reinvention</li>
+							</ul>
+							<p>To register,  log in and click on the <strong>Live Courses and Events</strong> box </p>
+						</div>
+
+
+						<div id="announcement3" class="announcement">
+							<h5>Preliminary Agenda</h5>
+
+							<h6>Virtual NCWorks Partnership Conference</h6>
+							<p>Check out the 2021 <a href="">Preliminary Agenda</a> to learn more about the <i>Virtual</i><strong> NCWorks Partnership Conference</strong>!</p>
+							<p>
+								<strong>
+									NCWorks Partnership Conference - Virtual
+									<br />October 12-22, 2021
+								</strong>
+							</p>
+
+							<p>Registration opens prior to Labor Day -- watch for more info coming soon!</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- Modal -->
+
+	<div class="modal fade" id="ncidLogin" tabindex="-1" aria-labelledby="ncidLoginLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="ncidLoginLabel">Log in with NCID</h5>
+					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body ml-2 align-items-center">
+					<form class="form-signin">
+						<label for="ncidUser" class="sr-only">NCID User ID</label>
+						<input type="email" id="ncidUser" class="form-control" placeholder="NCID User ID" required autofocus>
+						<label for="ncidPassword" class="sr-only">Password</label>
+						<input type="password" id="ncidPassword" class="form-control" placeholder="Password" required>
+						<div class="d-grid gap-2">
+							<button class="btn btn-primary btn-block" type="submit">Sign in using NCID Account</button>
+							<a href="https://ncid.nc.gov/" target="_blank" class="btn btn-block btn-link"><strong><u>Click Here to Reset NCID Password</u></strong></a>
+						</div>
+					</form>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div id="footer"></div>
+</body>
+</html>
